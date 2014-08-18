@@ -21,6 +21,8 @@ and  Thanks netease Tencent provide data<br>
 
 Developed By
 
-<a href="https://github.com/tigerguixh">tigerguixh</a>
+<a href="https://github.com/tigerguixh">tigerguixh</a><br>
 
+Last
 
+May also need a lot of optimization, if there are any mistakes or Suggestions at understanding or contact me 582650514 @qq.com
