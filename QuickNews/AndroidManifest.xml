@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tiger.quicknews"
+    android:versionCode="5"
+    android:versionName="1.31" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name="com.tiger.quicknews.App_"
+        android:allowBackup="true"
+        android:icon="@drawable/icon_new"
+        android:label="@string/app_name"
+        android:theme="@style/AppBaseTheme" >
+        <activity
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/SlideAppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.WelcomeActivity_"
+            android:theme="@style/SlideAppTheme"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.MainActivity_" />
+        <activity android:name=".activity.ChannelActivity" />
+        <activity android:name=".activity.DetailsActivity_" 
+            android:theme="@style/SlideAppTheme"/>
+        <activity android:name=".activity.ImageDetailActivity_" />
+        <activity android:name=".activity.PhotoDetailActivity_" />
+        <activity android:name=".activity.TuPianActivity_" />
+        <activity android:name=".activity.VideoActivity_" />
+        <activity
+            android:name=".activity.VideoPlayActivity_"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppBaseTheme" />
+        <activity android:name=".activity.MessageActivity_" />
+        <activity android:name=".activity.WeatherActivity_" />
+        <activity
+            android:name=".activity.ChooseCityActivity_"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activity.MoreActivity_"/>
+        <!-- 新浪图片新闻 -->
+        <activity android:name=".activity.TuPianSinaActivity_"/>
+        <!-- 新浪图片新闻详情 -->
+        <activity android:name=".activity.PicuterDetailActivity_"/>
+        
+        <!-- 友盟统计 -->
+        <meta-data android:value="53b4ad5a56240bc1ca01d13a" android:name="UMENG_APPKEY"></meta-data>
+        <meta-data android:value="浏览新闻" android:name="UMENG_CHANNEL"/>
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService" >
+        </service>
+
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.umeng.fb.ConversationActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.umeng.fb.ContactActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+    </application>
+
+</manifest>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:grid="http://schemas.android.com/apk/res-auto"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.tiger.quicknews.activity.MainActivity">
+    
+    <include
+        android:id="@+id/include1"
+        layout="@layout/common_title_bar" />
+    
+    <android.support.v4.widget.SwipeRefreshLayout 
+        android:id="@+id/swipe_container"
+        android:layout_below="@+id/include1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <com.tiger.quicknews.wedget.swiptlistview.SwipeListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="48dp"
+       	android:divider="@color/list_divider"
+        android:dividerHeight="1px"
+        android:scrollbarSize="@dimen/listview_scrollbar_width"
+        android:scrollbarThumbVertical="@drawable/scrollbar" 
+        swipe:swipeFrontView="@+id/front"
+            swipe:swipeBackView="@+id/back"
+            swipe:swipeDrawableChecked="@drawable/choice_selected"
+            swipe:swipeDrawableUnchecked="@drawable/choice_unselected"
+            swipe:swipeCloseAllItemsWhenMoveList="true"
+            swipe:swipeMode="both"
+            swipe:swipeIsDropDownStyle="false"
+        	swipe:swipeIsOnBottomStyle="true"
+        	swipe:swipeIsAutoLoadOnBottom="true"/>
+</android.support.v4.widget.SwipeRefreshLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/myProgressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="visible"
+        android:indeterminateDuration="700" />
+</RelativeLayout>
+

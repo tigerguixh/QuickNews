@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/current_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/hannibal" />
+
+    <TextView
+        android:id="@+id/current_page"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/current_image"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/bg_master"
+        android:text="1/3"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <com.tiger.quicknews.wedget.ProgressButton
+        android:id="@+id/progressButton"
+        style="@style/ProgressButton.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/loading_pin"
+    android:fromDegrees="0"  
+        android:toDegrees="359"  
+        android:duration="1000"  
+        android:repeatCount="-1"  
+        android:startOffset="100"
+         android:interpolator="@android:anim/accelerate_interpolator"
+        android:pivotX="50%"  
+        android:pivotY="50%" />

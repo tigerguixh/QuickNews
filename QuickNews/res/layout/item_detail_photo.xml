@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/current_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/hannibal" />
+
+    <com.tiger.quicknews.wedget.ProgressButton
+        android:id="@+id/progressButton"
+        style="@style/ProgressButton.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/photo_content"
+        style="@style/item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/bg_master"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="出征巴西的韩国23人中，有12人曾经出战过伦敦奥运会，这样的阵容选择也让洪明甫背上了任人唯亲的骂名，而大批的年轻球员被称之为“洪明甫的孩子们”"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/photo_content"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/bg_master"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/photo_title"
+            style="@style/item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/photo_count"
+            style="@style/item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/photo_title"
+            android:layout_alignBottom="@+id/photo_title"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

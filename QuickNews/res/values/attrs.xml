@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SliderLayout">
+
+        <!-- indicator visibility -->
+        <attr name="indicator_visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+
+        <attr name="auto_cycle" format="boolean"/>
+
+        <!-- page animation -->
+        <attr name="pager_animation" format="enum">
+            <enum name="Default" value="0">Default</enum>
+            <enum name="Accordion" value="1">Accordion</enum>
+            <enum name="Background2Foreground" value="2">Background2Foreground</enum>
+            <enum name="CubeIn" value="3">CubeIn</enum>
+            <enum name="DepthPage" value="4">DepthPage</enum>
+            <enum name="Fade" value="5">Fade</enum>
+            <enum name="FlipHorizontal" value="6">FlipHorizontal</enum>
+            <enum name="FlipPage" value="7">FlipPage</enum>
+            <enum name="Foreground2Background" value="8">Foreground2Background</enum>
+            <enum name="RotateDown" value="9">RotateDown</enum>
+            <enum name="RotateUp" value="10">RotateUp</enum>
+            <enum name="Stack" value="11">Stack</enum>
+            <enum name="Tablet" value="12">Tablet</enum>
+            <enum name="ZoomIn" value="13">ZoomIn</enum>
+            <enum name="ZoomOutSlide" value="14">ZoomOutSlide</enum>
+            <enum name="ZoomOut" value="15">ZoomOut</enum>
+        </attr>
+
+        <!-- page animation time span -->
+        <attr name="pager_animation_span" format="integer"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="PagerIndicator">
+        <!-- indicator visibility -->
+        <attr name="visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+
+        <attr name="shape" format="enum">
+            <enum value="0" name="oval"/>
+            <enum value="1" name="rect"/>
+        </attr>
+
+        <attr name="selected_color" format="color"/>
+        <attr name="unselected_color" format="color"/>
+
+        <!-- indicator style -->
+        <attr name="selected_drawable" format="reference"/>
+        <attr name="unselected_drawable" format="reference"/>
+
+        <attr name="selected_width" format="dimension"/>
+        <attr name="selected_height" format="dimension"/>
+
+        <attr name="unselected_width" format="dimension"/>
+        <attr name="unselected_height" format="dimension"/>
+
+        <attr name="padding_left" format="dimension"/>
+        <attr name="padding_right" format="dimension"/>
+        <attr name="padding_top" format="dimension"/>
+        <attr name="padding_bottom" format="dimension"/>
+
+        <attr name="selected_padding_left" format="dimension"/>
+        <attr name="selected_padding_right" format="dimension"/>
+        <attr name="selected_padding_top" format="dimension"/>
+        <attr name="selected_padding_bottom" format="dimension"/>
+
+        <attr name="unselected_padding_left" format="dimension"/>
+        <attr name="unselected_padding_right" format="dimension"/>
+        <attr name="unselected_padding_top" format="dimension"/>
+        <attr name="unselected_padding_bottom" format="dimension"/>
+
+
+    </declare-styleable>
+
+    <declare-styleable name="Themes">
+        <attr name="SliderStyle" format="reference"/>
+        <attr name="PagerIndicatorStyle" format="reference"/>
+    </declare-styleable>
+    
+    	<declare-styleable name="SlidingMenu">
+        <attr name="mode">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="viewAbove" format="reference" />
+        <attr name="viewBehind" format="reference" />
+        <attr name="behindOffset" format="dimension" />
+        <attr name="behindWidth" format="dimension" />
+        <attr name="behindScrollScale" format="float" />
+        <attr name="touchModeAbove">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+        </attr>
+        <attr name="touchModeBehind">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+        </attr>
+        <attr name="shadowDrawable" format="reference" />
+        <attr name="shadowWidth" format="dimension" />
+        <attr name="fadeEnabled" format="boolean" />
+        <attr name="fadeDegree" format="float" />
+        <attr name="selectorEnabled" format="boolean" />
+        <attr name="selectorDrawable" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="SwipeListView">
+        <attr name="swipeOpenOnLongPress" format="boolean"/>
+        <attr name="swipeAnimationTime" format="integer"/>
+        <attr name="swipeOffsetLeft" format="dimension"/>
+        <attr name="swipeOffsetRight" format="dimension"/>
+        <attr name="swipeCloseAllItemsWhenMoveList" format="boolean"/>
+        <attr name="swipeFrontView" format="reference"/>
+        <attr name="swipeBackView" format="reference"/>
+        <attr name="swipeMode" format="enum">
+            <enum name="none" value="0"/>
+            <enum name="both" value="1"/>
+            <enum name="right" value="2"/>
+            <enum name="left" value="3"/>
+        </attr>
+        <attr name="swipeActionLeft" format="enum">
+            <enum name="reveal" value="0"/>
+            <enum name="dismiss" value="1"/>
+            <enum name="choice" value="2"/>
+        </attr>
+        <attr name="swipeActionRight" format="enum">
+            <enum name="reveal" value="0"/>
+            <enum name="dismiss" value="1"/>
+            <enum name="choice" value="2"/>
+        </attr>
+        <attr name="swipeDrawableChecked" format="reference"/>
+        <attr name="swipeDrawableUnchecked" format="reference"/>
+        <attr name="swipeIsDropDownStyle" format="boolean" />
+        <attr name="swipeIsOnBottomStyle" format="boolean" />
+        <attr name="swipeIsAutoLoadOnBottom" format="boolean" />
+    </declare-styleable>
+    
+	<declare-styleable name="drop_down_list_attr">
+        <attr name="isDropDownStyle" format="boolean" />
+        <attr name="isOnBottomStyle" format="boolean" />
+        <attr name="isAutoLoadOnBottom" format="boolean" />
+    </declare-styleable>
+    
+	<declare-styleable name="FlipView">
+	            <attr name="orientation" format="enum">
+            <enum name="vertical" value="0"/>
+            <enum name="horizontal" value="1"/>
+        </attr>
+        <attr name="overFlipMode" format="enum">
+            <enum name="glow" value="0"/>
+            <enum name="rubber_band" value="1"/>
+        </attr>
+    </declare-styleable>
+    
+	<!-- 图片加载进度条 -->
+	<attr name="progressButtonStyle" format="reference"/>
+
+  <declare-styleable name="ProgressButton">
+    <attr name="progress" format="integer"/>
+    <attr name="max" format="integer"/>
+    <attr name="circleColor" format="color"/>
+    <attr name="progressColor" format="color"/>
+    <attr name="shadowDrawable1" format="reference"/>
+    <attr name="pinnedDrawable" format="reference"/>
+    <attr name="unpinnedDrawable" format="reference"/>
+    <attr name="innerSize" format="dimension"/>
+    <attr name="pinned" format="boolean"/>
+    <attr name="animating" format="boolean"/>
+    <attr name="animationSpeed" format="integer"/>
+    <attr name="animationDelay" format="integer"/>
+    <attr name="animationStripWidth" format="integer"/>
+    <attr name="android:background"/>
+    <attr name="android:clickable"/>
+    <attr name="android:focusable"/>
+  </declare-styleable>
+  
+  <declare-styleable name="ProgressPieView">
+        <attr name="progress1" format="integer"/>
+        <attr name="max1" format="integer"/>
+        <attr name="startAngle" format="integer"/>
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="backgroundColor" format="reference|color"/>
+        <attr name="progressColor1" format="reference|color"/>
+        <attr name="strokeColor" format="reference|color"/>
+        <attr name="showStroke" format="boolean"/>
+        <attr name="showText" format="boolean"/>
+        <attr name="typeface" format="string"/>
+        <attr name="image" format="reference"/>
+        <attr name="android:text"/>
+        <attr name="android:textSize"/>
+        <attr name="android:textColor"/>
+        <attr name="progressFillType" format="enum" >
+            <enum name="radial" value="0"/>
+            <enum name="center" value="1"/>
+        </attr>
+    </declare-styleable>
+  
+  <!-- 首页欢迎页 -->
+  <declare-styleable name="DiscrollView_LayoutParams">
+        <attr name="discrollve_alpha" format="boolean"/>
+        <attr name="discrollve_scaleX" format="boolean"/>
+        <attr name="discrollve_scaleY" format="boolean"/>
+        <attr name="discrollve_threshold" format="float"/>
+        <attr name="discrollve_fromBgColor" format="color"/>
+        <attr name="discrollve_toBgColor" format="color"/>
+        <attr name="discrollve_translation"/>
+    </declare-styleable>
+
+    <attr name="discrollve_translation">
+        <flag name="fromTop" value="0x01" />
+        <flag name="fromBottom" value="0x02" />
+        <flag name="fromLeft" value="0x04" />
+        <flag name="fromRight" value="0x08" />
+    </attr>
+  
+</resources>

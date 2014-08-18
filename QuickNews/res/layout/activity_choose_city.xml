@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/listitem_selector" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/common_title_bar" />
+    
+    <RelativeLayout
+        android:id="@+id/searchBarContainer"
+        android:layout_below="@+id/include1"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp" >
+
+        <EditText
+            android:id="@+id/input_search_query"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dip"
+            android:focusableInTouchMode="true"
+            android:drawableLeft="@drawable/biz_plugin_searchnews_search_btn"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:drawablePadding="5dp"
+            android:hint="搜索城市"
+            android:singleLine="true"
+            android:padding="5dp"
+            android:text=""
+            android:textSize="15dip" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/searchBarContainer" >
+
+        <com.tiger.quicknews.wedget.city.ContactListViewImpl
+            android:id="@+id/listview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:cacheColorHint="#00000000"
+            android:divider="@drawable/line"
+            android:fadingEdge="none"
+            android:fastScrollEnabled="false"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true"
+            android:listSelector="#00000000"
+            android:smoothScrollbar="true" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="src" path=".apt_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="libs/androidannotations-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="libs/com.haarman.listviewanimations-2.6.0.jar"/>
+	<classpathentry kind="lib" path="libs/jsoup-1.7.2.jar"/>
+	<classpathentry kind="lib" path="libs/nineoldandroids-2.4.0.jar"/>
+	<classpathentry kind="lib" path="libs/picasso-2.3.1.jar"/>
+	<classpathentry kind="lib" path="libs/viewpagertransformslibrary.jar"/>
+	<classpathentry kind="lib" path="libs/universal-image-loader-1.9.2-SNAPSHOT-with-sources.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

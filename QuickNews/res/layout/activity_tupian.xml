@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:flipview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg_color"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/common_title_bar" />
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/include1"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/redian"
+            style="@style/common_top"
+            android:checked="true"
+            android:text="@string/redian" />
+
+        <RadioButton
+            android:id="@+id/dujia"
+            style="@style/common_top"
+            android:text="@string/dujia" />
+
+        <RadioButton
+            android:id="@+id/mingxing"
+            style="@style/common_top"
+            android:text="@string/mingxing" />
+
+        <RadioButton
+            android:id="@+id/titan"
+            style="@style/common_top"
+            android:text="@string/titan" />
+
+        <RadioButton
+            android:id="@+id/meitu"
+            style="@style/common_top"
+            android:visibility="gone"
+            android:text="@string/meitu" />
+    </RadioGroup>
+
+    <View
+        android:id="@+id/category_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/radiogroup"
+        android:background="#ffdddddd" />
+
+    <com.tiger.quicknews.wedget.gesture.EnableChildSlideFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/category_line" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.tiger.quicknews.wedget.gesture.EnableChildSlideFrameLayout>
+
+</RelativeLayout>

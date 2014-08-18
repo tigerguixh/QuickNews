@@ -1,0 +1,335 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!--
+             Note that we use the base animation style here (that is no
+             animations) because we really have no idea how this kind of
+             activity will be used.
+        -->
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    
+    <!-- activity进入分层 -->
+    <style name="ActivityTransitions" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_left1</item>
+        <item name="android:activityOpenExitAnimation">@anim/fade_back</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_forward</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right1</item>
+    </style>
+    <style name="SlideAppTheme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowAnimationStyle">@style/ActivityTransitions</item>
+    </style>
+    
+    <style name="title_bar_style">
+        <item name="android:background">@drawable/bg_titlebar</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/title_bar_height</item>
+    </style>
+
+    <style name="top_update_count">
+        <item name="android:textSize">10.0sp</item>
+        <item name="android:textColor">#ffcc3131</item>
+        <item name="android:gravity">center</item>
+        <item name="android:height">15.0dip</item>
+        <item name="android:width">15.0dip</item>
+    </style>
+
+    <style name="title_text_style">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textColor">@color/title_text_color</item>
+    </style>
+
+    <style name="subscribe_my_tip_text">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/subscribe_tip_text</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="text_on_button">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowRadius">0.0</item>
+    </style>
+
+    <style name="common_button" parent="@style/text_on_button">
+        <item name="android:background">@drawable/btn_common</item>
+        <item name="android:paddingLeft">6.0dip</item>
+        <item name="android:paddingRight">6.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">50.0dip</item>
+        <item name="android:minHeight">30.0dip</item>
+    </style>
+
+    <style name="title_bar_button" parent="@style/common_button">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/btn_common_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingLeft">17.0dip</item>
+        <item name="android:paddingRight">17.0dip</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="title_view" parent="@style/title_bar_button">
+        <item name="android:gravity">right|center</item>
+        <item name="android:background">@drawable/transparent</item>
+        <item name="android:paddingLeft">12.0dip</item>
+        <item name="android:paddingRight">0.0dip</item>
+        <item name="android:layout_marginLeft">0.0dip</item>
+        <item name="android:layout_marginRight">0.0dip</item>
+        <item name="android:minHeight">44.0dip</item>
+        <item name="android:clickable">true</item>
+        <item name="android:drawablePadding">0.0dip</item>
+    </style>
+    
+    <style name="back_view" parent="@style/title_view">
+        <item name="android:drawableLeft">@drawable/btn_back</item>
+    </style>
+
+    
+    
+    <style name="subscribe_seperate_line">
+        <item name="android:background">@color/subscribe_seperate_line</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.5dip</item>
+        <item name="android:layout_marginTop">14.0dip</item>
+        <item name="android:layout_marginBottom">14.0dip</item>
+    </style>
+
+    <style name="top_category_scroll_view_item_text">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="drop_down_list_header_progress_bar_style">
+        <item name="android:minHeight">@dimen/drop_down_list_header_progress_bar_height</item>
+        <item name="android:maxHeight">@dimen/drop_down_list_header_progress_bar_height</item>
+    </style>
+
+    <style name="drop_down_list_footer_progress_bar_style">
+        <item name="android:minHeight">@dimen/drop_down_list_footer_progress_bar_height</item>
+        <item name="android:maxHeight">@dimen/drop_down_list_footer_progress_bar_height</item>
+    </style>
+
+    <style name="drop_down_list_header_font_style">
+        <item name="android:textColor">@color/drop_down_list_header_font_color</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+
+    <style name="drop_down_list_header_second_font_style">
+        <item name="android:textColor">@color/drop_down_list_header_second_font_color</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+    </style>
+
+    <style name="drop_down_list_footer_font_style">
+        <item name="android:textColor">@color/drop_down_list_footer_font_color</item>
+        <item name="android:textSize">@dimen/drop_down_list_footer_font_size</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+
+    <style name="detail_activity">
+        <item name="android:background">@color/detail_activity_bg_color</item>
+    </style>
+
+    <style name="detail_title_bar_style" parent="@style/title_bar_style">
+        <item name="android:background">@drawable/detail_bg_titlebar</item>
+    </style>
+
+    <style name="detail_back_view" parent="@style/back_view">
+        <item name="android:background">@drawable/transparent</item>
+        <item name="android:drawableLeft">@drawable/btn_back_detail</item>
+    </style>
+
+    <style name="deail_title_text_style" parent="@style/title_text_style">
+        <item name="android:textColor">@color/detail_title_text_color</item>
+    </style>
+
+    <style name="myProgressBarStyleLarge">
+　　        <item name="android:indeterminateDrawable">@drawable/progress_large_white</item>
+    </style>
+
+    <style name="item_left">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:background">@drawable/switch_check_selector</item>
+        <item name="android:drawablePadding">15dp</item>
+        <item name="android:paddingLeft">35dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+
+    <style name="common_top">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/group_common</item>
+        <item name="android:textColor">@color/group_common_color</item>
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="weacher_title">
+        <item name="android:textSize">21.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="weacher_temp">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="weacher_weather">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="item_title">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/item_title</item>
+    </style>
+
+    <style name="item_content">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/ss_comment_from</item>
+    </style>
+
+    <style name="item_secondary_text">
+        <item name="android:textSize">11.0sp</item>
+        <item name="android:textColor">@color/ss_comment_time</item>
+    </style>
+
+    <style name="item_local">
+        <item name="android:textSize">10.0sp</item>
+        <item name="android:textColor">@color/item_local</item>
+        <item name="android:background">@drawable/list_item_local_bg</item>
+    </style>
+
+    <style name="item_abstract">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:textColor">@color/item_abstract</item>
+    </style>
+
+    <style name="item_image">
+        <item name="android:background">@drawable/small_image_holder_listpage</item>
+        <item name="android:layout_width">@dimen/item_image_width</item>
+        <item name="android:layout_height">@dimen/item_image_height</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="item_image_gap">
+        <item name="android:layout_width">15.0dip</item>
+        <item name="android:layout_height">1.0dip</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="item_comment_content">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/default_text_night</item>
+    </style>
+    <!-- 自定义loading dialog -->
+    <style name="loading_dialog_tran" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="ProgressButton" />
+
+    <!-- Base theme for the Progress button. -->
+    <style name="ProgressButton.Pin">
+        <item name="progress">0</item>
+        <item name="max">100</item>
+        <item name="circleColor">@color/progress_default_circle_color</item>
+        <item name="progressColor">@color/progress_default_progress_color</item>
+        <item name="pinnedDrawable">@drawable/pin_progress_pinned</item>
+        <item name="unpinnedDrawable">@drawable/pin_progress_unpinned</item>
+        <item name="shadowDrawable1">@drawable/pin_progress_shadow</item>
+        <item name="innerSize">@dimen/progress_inner_size</item>
+        <item name="pinned">false</item>
+        <item name="animating">false</item>
+        <item name="animationSpeed">1</item>
+        <item name="animationDelay">50</item>
+        <item name="animationStripWidth">6</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+    <!-- Base theme for the Progress button. -->
+    <style name="ProgressButton.Pin.Compat">
+        <item name="android:background">@android:drawable/list_selector_background</item>
+    </style>
+
+    <style name="ProgressButton.1">
+        <!-- Default ! -->
+    </style>
+
+    <style name="ProgressButton.2">
+
+        <!-- Starts pinned and is NOT clickable ! -->
+        <item name="pinned">true</item>
+    </style>
+
+    <style name="ProgressButton.Clickable">
+
+        <!-- Attributes required to make a progress button clickable ! -->
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="ProgressButton.Clickable.3">
+
+        <!-- Starts pinned, and IS clickable ! -->
+        <item name="pinned">true</item>
+    </style>
+
+    <style name="ProgressButton.Clickable.4">
+
+        <!-- A styled progress button ! -->
+        <!-- You can also change the drawables (pinned, unpinned and/or shadow) ! -->
+        <!-- <item name="pinnedDrawable">@drawable/pinned_custom</item> ! -->
+        <item name="circleColor">@color/holo_green_dark</item>
+        <item name="progressColor">@color/holo_green_light</item>
+    </style>
+    
+    <!-- TAB 我的页面 -->
+    <style name="my_itme">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:drawableRight">@drawable/to</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_color_selector</item>
+    </style>
+
+</resources>

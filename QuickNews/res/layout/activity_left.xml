@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/biz_pc_main_bg"
+    android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/pics"
+            style="@style/item_left"
+            android:drawableLeft="@drawable/biz_navigation_tab_pics"
+            android:text="@string/pics" />
+        
+        <Button
+            android:id="@+id/video"
+            style="@style/item_left"
+            android:drawableLeft="@drawable/biz_navigation_tab_video"
+            android:text="@string/video" />
+        <Button
+             android:id="@+id/ties"
+            style="@style/item_left"
+            android:drawableLeft="@drawable/biz_navigation_tab_news"
+            android:visibility="gone"
+            android:text="@string/ties" />
+        <Button
+            android:id="@+id/tianqi"
+            style="@style/item_left"
+            android:drawableLeft="@drawable/biz_navigation_tab_read"
+            android:text="@string/tianqi" />
+        <Button
+            android:id="@+id/more"
+            style="@style/item_left"
+            android:drawableLeft="@drawable/biz_navigation_tab_ties"
+            android:text="@string/more" />
+
+</LinearLayout>

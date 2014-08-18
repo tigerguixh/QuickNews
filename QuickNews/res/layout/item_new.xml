@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/newsbg_listpage"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/article_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/list_item_horizontal_padding"
+            android:paddingRight="8.0dip"
+            android:paddingTop="10.0dip" >
+
+            <RelativeLayout
+                android:id="@+id/article_top_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" 
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/title_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="80dp"
+                    android:paddingRight="7.0dip" >
+
+                    <ImageView
+                        android:id="@+id/left_image"
+                        android:layout_width="@dimen/right_image_width"
+                        android:layout_height="@dimen/right_image_height"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="4.0dip"
+                        android:layout_marginTop="3.0dip"
+                        android:visibility="visible"
+                        android:background="@drawable/small_image_holder_listpage"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/item_title"
+                        style="@style/item_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="12dp"
+                        android:singleLine="true"
+                        android:layout_toRightOf="@+id/left_image" />
+
+                    <TextView
+                        android:id="@+id/item_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/item_content"
+                        android:layout_alignLeft="@+id/item_title"
+                        android:maxLines="2"
+                        android:layout_marginTop="35dp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible" >
+
+                <TextView
+                    android:id="@+id/item_abstract"
+                    style="@style/item_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4.0dip"
+                    android:layout_marginRight="7.0dip"
+                    android:lineSpacingExtra="4.0dip" />
+
+                <LinearLayout
+                    android:id="@+id/item_image_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6.0dip"
+                    android:orientation="horizontal"
+                    android:paddingRight="8.0dip" >
+
+                    <ImageView
+                        android:id="@+id/item_image_0"
+                        style="@style/item_image" />
+
+                    <View style="@style/item_image_gap" />
+
+                    <ImageView
+                        android:id="@+id/item_image_1"
+                        style="@style/item_image" />
+
+                    <View style="@style/item_image_gap" />
+
+                    <ImageView
+                        android:id="@+id/item_image_2"
+                        style="@style/item_image" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/item_divider"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/divider_day" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:background="#ffdddddd" />
+
+</LinearLayout>

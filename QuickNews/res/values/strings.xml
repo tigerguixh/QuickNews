@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">新闻快讯</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+<string name="drawer_btn_rss">频道管理</string>
+<string name="subscribe_my_category">我的频道</string>
+    <string name="subscribe_more_category">更多频道</string>
+    <string name="subscribe_manager_category_info">单击增删频道</string>
+    <string name="subscribe_manager_category_info_2">单击增删频道，长按拖拽排序</string>
+    <!--**************************** QuickReturnListView****************************-->
+    <!-- 下拉刷新  end -->
+    <string name="drop_down_list_header_default_text">Click to refresh&#8230;</string>
+    <string name="drop_down_list_header_pull_text">Drop Down to refresh&#8230;</string>
+    <string name="drop_down_list_header_release_text">Release to refresh&#8230;</string>
+    <string name="drop_down_list_header_loading_text">加载中&#8230;</string>
+    <string name="drop_down_list_footer_default_text"></string>
+    <string name="drop_down_list_footer_loading_text">加载中&#8230;</string>
+    <string name="drop_down_list_footer_no_more_text">无更多信息</string>
+    <string name="image_content">Image</string>
+    <string name="httpError">连接失败,请稍候再试</string>
+    <!-- 下拉刷新  end -->
+    
+    <!-- 左侧菜单页 -->
+    <string name="left_search">数据查询</string>
+    <string name="left_setting">系统设置</string>
+    <string name="left_check_update">检查更新</string>
+    <string name="left_feedback">用户反馈</string>
+    <string name="left_restart">重复播放</string>
+    <string name="isnewest">(当前为最新版本)</string>
+    
+      <string name="content_desc_pinned_downloaded">Pinned to device and downloaded</string>
+  <string name="content_desc_pinned_downloading">Pinned to device and downloading</string>
+  <string name="content_desc_pinned_not_downloaded">Pinned to device and waiting to download
+  </string>
+
+  <string name="content_desc_unpinned_downloaded">Temporarily downloaded</string>
+  <string name="content_desc_unpinned_downloading">Temporarily downloading</string>
+  <string name="content_desc_unpinned_not_downloaded">Not downloaded</string>
+
+  <string name="via_xml">Via XML:</string>
+  <string name="via_code">Via Code:</string>
+  <string name="start_animating">Start Animating</string>
+  <string name="stop_animating">Stop Animating</string>
+  <string name="press_again_exit">再次点击，退出新闻快讯</string>
+   <string name="not_network">暂无网络</string> 
+   
+   <!-- 左边页面 -->
+   <string name="pics">图片</string>
+   <string name="video">视频</string>
+   <string name="ties">消息</string>
+   <string name="tianqi">天气</string>
+   <string name="more">更多</string>
+   
+   <!-- 图片栏 -->
+   <string name="redian">精选</string>
+   <string name="dujia">趣图</string>
+   <string name="mingxing">美图</string>
+   <string name="titan">故事</string>
+   <string name="meitu">美图</string>
+   
+   <!-- 视频栏 -->
+   <string name="video_redian">热点</string>
+   <string name="video_yule">娱乐</string>
+   <string name="video_gaoxiao">搞笑</string>
+   <string name="video_jingpin">精品</string>
+   
+</resources>
