@@ -17,5 +17,10 @@ Special Thanks
 <a href="https://github.com/chrisbanes/PhotoView">PhotoView </a> by chrisbanes<br>
 <a href="https://github.com/jfeinstein10/SlidingMenu">slidingmenu </a> by jfeinstein10<br>
 
-and  Thanks netease Tencent provide data
+and  Thanks netease Tencent provide data<br>
+
+Developed By
+
+<a href="https://github.com/tigerguixh">tigerguixh</a>
+
 
