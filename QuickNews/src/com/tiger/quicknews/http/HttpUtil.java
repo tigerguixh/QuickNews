@@ -2,6 +2,7 @@
 package com.tiger.quicknews.http;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.Log;
 
 import org.apache.http.NameValuePair;
@@ -32,6 +33,10 @@ public class HttpUtil {
     public static String getByHttpClient(Context context, String strUrl,
             NameValuePair... nameValuePairs) throws Exception {
         String result = CustomHttpClient.getFromWebByHttpClient(context, strUrl, nameValuePairs);
+
+        if (TextUtils.isEmpty(result)) {
+            result = "";
+        }
 
         return result;
     }
