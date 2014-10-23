@@ -83,12 +83,12 @@ public class IntentUtils {
                         /** no need to close, actually do nothing */
                         if (null != baos)
                             baos.close();
+                        if (null != bitmap && !bitmap.isRecycled()) {
+                            bitmap.recycle();
+                            bitmap = null;
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
-                    }
-                    if (null != bitmap && !bitmap.isRecycled()) {
-                        bitmap.recycle();
-                        bitmap = null;
                     }
                 }
                 mainThread.post(postAction);
