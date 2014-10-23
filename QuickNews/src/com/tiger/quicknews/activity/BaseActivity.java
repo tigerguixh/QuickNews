@@ -156,7 +156,7 @@ public class BaseActivity extends SlidingActivity {
             intent.putExtras(pBundle);
         }
         if (requestCode == 0) {
-            IntentUtils.startPreviewActivity(this, intent);
+            IntentUtils.startPreviewActivity(this, intent, 0);
             // startActivity(intent);
         } else {
             IntentUtils.startPreviewActivity(this, intent, requestCode);

@@ -1,3 +1,4 @@
+
 package com.tiger.quicknews.wedget.slideingactivity;
 
 import android.app.Activity;
@@ -8,6 +9,8 @@ import android.graphics.Canvas;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+
+import com.tiger.quicknews.activity.BaseActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -23,29 +26,34 @@ public class IntentUtils {
 
     /**
      * start screen capture with no delay
-     *
+     * 
      * @param context
      * @param intent
      */
-    public static void startPreviewActivity(Context context, Intent intent) {
-        startPreviewActivity(context, intent, 0);
+    public static void startPreviewActivity(Context context, Intent intent, int requestCode) {
+        startPreviewActivity(context, intent, 0, requestCode);
     }
 
     /**
-     * start screen capture after "delay" milliseconds, so the previous activity's
-     * state recover to normal state, such as button click, list item click,wait
-     * them to normal state so we can make a good screen capture
-     *
+     * start screen capture after "delay" milliseconds, so the previous
+     * activity's state recover to normal state, such as button click, list item
+     * click,wait them to normal state so we can make a good screen capture
+     * 
      * @param context
      * @param intent
-     * @param delay   time in milliseconds
+     * @param delay time in milliseconds
      */
-    public static void startPreviewActivity(final Context context, final Intent intent, long delay) {
+    public static void startPreviewActivity(final Context context, final Intent intent, long delay,
+            final int requestCode) {
         final Handler mainThread = new Handler(Looper.getMainLooper());
         final Runnable postAction = new Runnable() {
             @Override
             public void run() {
-                context.startActivity(intent);
+                if (requestCode == 0) {
+                    context.startActivity(intent);
+                } else {
+                    ((BaseActivity) context).startActivityForResult(intent, requestCode);
+                }
             }
         };
 
@@ -54,8 +62,8 @@ public class IntentUtils {
             @Override
             public void run() {
                 /**
-                 * activity's root layout id, you can change the android.R.id.content to your root
-                 * layout id
+                 * activity's root layout id, you can change the
+                 * android.R.id.content to your root layout id
                  */
                 final View contentView = ((Activity) context).findViewById(android.R.id.content);
 
@@ -73,7 +81,8 @@ public class IntentUtils {
                 } finally {
                     try {
                         /** no need to close, actually do nothing */
-                        if (null != baos) baos.close();
+                        if (null != baos)
+                            baos.close();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
