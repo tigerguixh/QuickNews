@@ -65,7 +65,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
     // try {
     // initView();
     // initData();
-    // } catch (Exception e) {
+    // } catch (Exception e) {ss
     // e.printStackTrace();
     // }
     // }
