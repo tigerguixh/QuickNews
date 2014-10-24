@@ -96,7 +96,9 @@ public class NewImageView extends RelativeLayout implements ImageLoadingListener
         } else {
             progressButton.setVisibility(View.VISIBLE);
         }
-        progressButton.setProgress(currentpro);
+        if (currentpro >= 0 && currentpro <= 100) {
+            progressButton.setProgress(currentpro);
+        }
         updatePinProgressContentDescription(progressButton, context);
 
     }

@@ -209,7 +209,7 @@ public class BaoXueYouXiFragment extends BaseFragment implements
 
         List<NewModle> list = NewListJson.instance(getActivity()).readJsonNewModles(result,
                 Url.BaoXueId);
-        if (index == 0) {
+        if (index == 0 && list.size() >= 4) {
             initSliderLayout(list);
         } else {
             newAdapter.appendList(list);

@@ -208,7 +208,7 @@ public class LunTanFragment extends BaseFragment implements SwipeRefreshLayout.O
 
         List<NewModle> list = NewListJson.instance(getActivity()).readJsonNewModles(result,
                 Url.LunTanId);
-        if (index == 0) {
+        if (index == 0 && list.size() >= 4) {
             initSliderLayout(list);
         } else {
             newAdapter.appendList(list);

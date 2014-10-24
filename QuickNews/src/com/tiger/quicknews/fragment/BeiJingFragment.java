@@ -209,7 +209,7 @@ public class BeiJingFragment extends BaseFragment implements SwipeRefreshLayout.
         List<NewModle> list = NewListJson.instance(getActivity()).readJsonNewModles(result,
                 "北京");
         newAdapter.currentItem("北京");
-        if (index == 0) {
+        if (index == 0 && list.size() >= 4) {
             initSliderLayout(list);
         } else {
             newAdapter.appendList(list);

@@ -220,7 +220,7 @@ public class JunShiFragment extends BaseFragment implements SwipeRefreshLayout.O
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i).getImgsrc());
         }
-        if (index == 0) {
+        if (index == 0 && list.size() >= 4) {
             initSliderLayout(list);
         } else {
             newAdapter.appendList(list);

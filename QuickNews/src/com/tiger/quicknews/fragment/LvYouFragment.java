@@ -208,7 +208,7 @@ public class LvYouFragment extends BaseFragment implements SwipeRefreshLayout.On
 
         List<NewModle> list = NewListJson.instance(getActivity()).readJsonNewModles(result,
                 Url.LvYouId);
-        if (index == 0) {
+        if (index == 0 && list.size() >= 4) {
             initSliderLayout(list);
         } else {
             newAdapter.appendList(list);

@@ -208,7 +208,7 @@ public class XiaoHuaFragment extends BaseFragment implements SwipeRefreshLayout.
 
         List<NewModle> list = NewListJson.instance(getActivity()).readJsonNewModles(result,
                 Url.XiaoHuaId);
-        if (index == 0) {
+        if (index == 0 && list.size() >= 4) {
             initSliderLayout(list);
         } else {
             newAdapter.appendList(list);

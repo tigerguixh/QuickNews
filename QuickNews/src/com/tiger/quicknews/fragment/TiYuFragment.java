@@ -208,7 +208,7 @@ public class TiYuFragment extends BaseFragment implements SwipeRefreshLayout.OnR
 
         List<NewModle> list = NewListJson.instance(getActivity()).readJsonNewModles(result,
                 Url.TiYuId);
-        if (index == 0) {
+        if (index == 0 && list.size() >= 4) {
             initSliderLayout(list);
         } else {
             newAdapter.appendList(list);

@@ -208,7 +208,7 @@ public class YuLeFragment extends BaseFragment implements SwipeRefreshLayout.OnR
 
         List<NewModle> list = NewListJson.instance(getActivity()).readJsonNewModles(result,
                 Url.YuLeId);
-        if (index == 0) {
+        if (index == 0 && list.size() >= 4) {
             try {
                 initSliderLayout(list);
             } catch (Exception e) {
