@@ -87,7 +87,8 @@ public class BeiJingFragment extends BaseFragment implements SwipeRefreshLayout.
         AnimationAdapter animationAdapter = new CardsAnimationAdapter(newAdapter);
         animationAdapter.setAbsListView(mListView);
         mListView.setAdapter(animationAdapter);
-        loadData(getLocalUrl(index + "", Url.BeiJingId));
+        // loadData(getLocalUrl(index + "", Url.BeiJingId));
+        onRefresh();
 
         mListView.setOnBottomListener(new OnClickListener() {
             @Override
@@ -153,16 +154,11 @@ public class BeiJingFragment extends BaseFragment implements SwipeRefreshLayout.
 
     @Override
     public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                currentPagte = 1;
-                isRefresh = true;
-                loadData(getLocalUrl(0 + "", Url.BeiJingId));
-                url_maps.clear();
-                mDemoSlider.removeAllSliders();
-            }
-        }, 2000);
+        currentPagte = 1;
+        isRefresh = true;
+        loadData(getLocalUrl(0 + "", Url.BeiJingId));
+        url_maps.clear();
+        mDemoSlider.removeAllSliders();
     }
 
     @ItemClick(R.id.listview)

@@ -86,16 +86,16 @@ public final class MainActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        shade_right = ((ImageView) hasViews.findViewById(id.shade_right));
-        mRadioGroup_content = ((LinearLayout) hasViews.findViewById(id.mRadioGroup_content));
-        rl_column = ((RelativeLayout) hasViews.findViewById(id.rl_column));
-        shade_left = ((ImageView) hasViews.findViewById(id.shade_left));
-        mViewPager = ((ViewPager) hasViews.findViewById(id.mViewPager));
-        top_head = ((ImageView) hasViews.findViewById(id.top_head));
-        mColumnHorizontalScrollView = ((ColumnHorizontalScrollView) hasViews.findViewById(id.mColumnHorizontalScrollView));
         top_more = ((ImageView) hasViews.findViewById(id.top_more));
+        shade_left = ((ImageView) hasViews.findViewById(id.shade_left));
+        mColumnHorizontalScrollView = ((ColumnHorizontalScrollView) hasViews.findViewById(id.mColumnHorizontalScrollView));
         ll_more_columns = ((LinearLayout) hasViews.findViewById(id.ll_more_columns));
+        rl_column = ((RelativeLayout) hasViews.findViewById(id.rl_column));
+        mRadioGroup_content = ((LinearLayout) hasViews.findViewById(id.mRadioGroup_content));
+        mViewPager = ((ViewPager) hasViews.findViewById(id.mViewPager));
+        shade_right = ((ImageView) hasViews.findViewById(id.shade_right));
         button_more_columns = ((ImageView) hasViews.findViewById(id.button_more_columns));
+        top_head = ((ImageView) hasViews.findViewById(id.top_head));
         {
             View view = hasViews.findViewById(id.top_head);
             if (view!= null) {

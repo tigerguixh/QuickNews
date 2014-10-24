@@ -1,6 +1,7 @@
 
 package com.tiger.quicknews.bean;
 
+import android.content.ContentValues;
 import android.database.SQLException;
 import android.util.Log;
 
@@ -65,6 +66,7 @@ public class ChannelManage {
         if (channelDao == null)
             channelDao = new ChannelDao(paramDBHelper.getContext());
         // NavigateItemDao(paramDBHelper.getDao(NavigateItem.class));
+        initDefaultChannel();
         return;
     }
 
@@ -76,7 +78,11 @@ public class ChannelManage {
      */
     public static ChannelManage getManage(SQLHelper dbHelper) throws SQLException {
         if (channelManage == null)
-            channelManage = new ChannelManage(dbHelper);
+            synchronized (ChannelManage.class) {
+                if (channelManage == null) {
+                    channelManage = new ChannelManage(dbHelper);
+                }
+            }
         return channelManage;
     }
 
@@ -111,7 +117,6 @@ public class ChannelManage {
             }
             return list;
         }
-        initDefaultChannel();
         return defaultUserChannels;
     }
 
@@ -158,6 +163,48 @@ public class ChannelManage {
             channelDao.addCache(channelItem);
         }
     }
+
+    public void updateChannel(ChannelItem channelItem, String selected) {
+        ContentValues values = new ContentValues();
+        values.put("selected", selected);
+        values.put("id", channelItem.getId());
+        values.put("name", channelItem.getName());
+        values.put("orderId", channelItem.getOrderId());
+        channelDao.updateCache(values, " name = ?", new String[] {
+                channelItem.getName()
+        });
+    }
+
+    // /**
+    // * 保存单个用户频道到数据库
+    // *
+    // * @param userList
+    // */
+    //
+    // public void saveUserChannel(ChannelItem channelItem) {
+    // channelDao.addCache(channelItem);
+    // }
+    //
+    // public void deleteUserChannel(ChannelItem channelItem) {
+    // channelDao.deleteCache(" name=?", new String[] {
+    // channelItem.getName()
+    // });
+    // }
+    //
+    // /**
+    // * 保存单个其他频道到数据库
+    // *
+    // * @param userList
+    // */
+    // public void saveOtherChannel(ChannelItem channelItem) {
+    // channelDao.addCache(channelItem);
+    // }
+    //
+    // public void deleteOtherChannel(ChannelItem channelItem) {
+    // channelDao.deleteCache(" name=?", new String[] {
+    // channelItem.getName()
+    // });
+    // }
 
     /**
      * 保存其他频道到数据库

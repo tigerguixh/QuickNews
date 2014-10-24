@@ -84,8 +84,8 @@ public final class ImageDetailActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mFlipView = ((FlipView) hasViews.findViewById(id.flip_view));
         newTitle = ((TextView) hasViews.findViewById(id.new_title));
+        mFlipView = ((FlipView) hasViews.findViewById(id.flip_view));
         initView();
     }
 

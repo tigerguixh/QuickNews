@@ -68,36 +68,6 @@ public final class LeftView_
     @Override
     public void onViewChanged(HasViews hasViews) {
         {
-            View view = hasViews.findViewById(id.tianqi);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        LeftView_.this.enterTianQi(view);
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(id.pics);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        LeftView_.this.enterPics(view);
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = hasViews.findViewById(id.more);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -106,6 +76,21 @@ public final class LeftView_
                     @Override
                     public void onClick(View view) {
                         LeftView_.this.enterMore(view);
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.video);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        LeftView_.this.enterVideo(view);
                     }
 
                 }
@@ -128,14 +113,29 @@ public final class LeftView_
             }
         }
         {
-            View view = hasViews.findViewById(id.video);
+            View view = hasViews.findViewById(id.pics);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
                     public void onClick(View view) {
-                        LeftView_.this.enterVideo(view);
+                        LeftView_.this.enterPics(view);
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.tianqi);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        LeftView_.this.enterTianQi(view);
                     }
 
                 }

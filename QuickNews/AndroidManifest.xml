@@ -46,7 +46,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity_" />
-        <activity android:name=".activity.ChannelActivity" />
+        <activity android:name=".activity.ChannelActivity_" />
         <activity android:name=".activity.DetailsActivity_" 
             android:theme="@style/SlideAppTheme"/>
         <activity android:name=".activity.ImageDetailActivity_" />

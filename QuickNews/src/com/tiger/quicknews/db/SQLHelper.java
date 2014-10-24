@@ -34,7 +34,7 @@ public class SQLHelper extends SQLiteOpenHelper {
                 ID + " INTEGER , " +
                 NAME + " TEXT , " +
                 ORDERID + " INTEGER , " +
-                SELECTED + " SELECTED)";
+                SELECTED + " TEXT)";
         db.execSQL(sql);
     }
 

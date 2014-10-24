@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -19,6 +18,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.tiger.quicknews.App;
 import com.tiger.quicknews.R;
 import com.tiger.quicknews.adapter.DragAdapter;
@@ -29,11 +29,18 @@ import com.tiger.quicknews.wedget.DragGrid;
 import com.tiger.quicknews.wedget.OtherGridView;
 import com.umeng.analytics.MobclickAgent;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Background;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.UiThread;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 频道管理
  */
+@EActivity(R.layout.channel)
 public class ChannelActivity extends BaseActivity implements OnItemClickListener {
     public static String TAG = "ChannelActivity";
     /** 用户栏目的GRIDVIEW */
@@ -51,24 +58,38 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
     /** 是否在移动，由于这边是动画结束后才进行的数据更替，设置这个限制为了避免操作太频繁造成的数据错乱。 */
     boolean isMove = false;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.channel);
-        try {
-            initView();
-            initData();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    // @Override
+    // public void onCreate(Bundle savedInstanceState) {
+    // super.onCreate(savedInstanceState);
+    // setContentView(R.layout.channel);
+    // try {
+    // initView();
+    // initData();
+    // } catch (Exception e) {
+    // e.printStackTrace();
+    // }
+    // }
+
+    /** 初始化布局 */
+    @AfterViews
+    void initView() {
+        userGridView = (DragGrid) findViewById(R.id.userGridView);
+        otherGridView = (OtherGridView) findViewById(R.id.otherGridView);
+        initData();
     }
 
     /** 初始化数据 */
-    private void initData() {
+    @Background
+    void initData() {
         userChannelList = ((ArrayList<ChannelItem>) ChannelManage.getManage(
                 App.getApp().getSQLHelper()).getUserChannel());
         otherChannelList = ((ArrayList<ChannelItem>) ChannelManage.getManage(
                 App.getApp().getSQLHelper()).getOtherChannel());
+        setData();
+    }
+
+    @UiThread
+    void setData() {
         userAdapter = new DragAdapter(this, userChannelList);
         userGridView.setAdapter(userAdapter);
         otherAdapter = new OtherAdapter(this, otherChannelList);
@@ -76,19 +97,6 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
         // 设置GRIDVIEW的ITEM的点击监听
         otherGridView.setOnItemClickListener(this);
         userGridView.setOnItemClickListener(this);
-    }
-
-    /** 初始化布局 */
-    private void initView() {
-        userGridView = (DragGrid) findViewById(R.id.userGridView);
-        otherGridView = (OtherGridView) findViewById(R.id.otherGridView);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
     }
 
     /** GRIDVIEW对应的ITEM点击监听接口 */
@@ -121,9 +129,12 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
                                     otherGridView
                                             .getChildAt(otherGridView.getLastVisiblePosition())
                                             .getLocationInWindow(endLocation);
-                                    MoveAnim(moveImageView, startLocation, endLocation, channel,
+                                    moveAnim(moveImageView, startLocation, endLocation, channel,
                                             userGridView);
                                     userAdapter.setRemove(position);
+                                    ChannelManage.getManage(App.getApp().getSQLHelper())
+                                            .updateChannel(
+                                                    channel, "0");
                                 } catch (Exception localException) {
                                 }
                             }
@@ -150,9 +161,11 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
                                 // 获取终点的坐标
                                 userGridView.getChildAt(userGridView.getLastVisiblePosition())
                                         .getLocationInWindow(endLocation);
-                                MoveAnim(moveImageView, startLocation, endLocation, channel,
+                                moveAnim(moveImageView, startLocation, endLocation, channel,
                                         otherGridView);
                                 otherAdapter.setRemove(position);
+                                ChannelManage.getManage(App.getApp().getSQLHelper()).updateChannel(
+                                        channel, "1");
                             } catch (Exception localException) {
                             }
                         }
@@ -173,9 +186,11 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
      * @param moveChannel
      * @param clickGridView
      */
-    private void MoveAnim(View moveView, int[] startLocation, int[] endLocation,
+    private void moveAnim(View moveView, int[] startLocation, int[] endLocation,
             final ChannelItem moveChannel,
             final GridView clickGridView) {
+        // 将当前栏目增加到改变过的listview中 若栏目已经存在删除点，不存在添加进去
+
         int[] initLocation = new int[2];
         // 获取传递过来的VIEW的坐标
         moveView.getLocationInWindow(initLocation);
@@ -270,7 +285,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
     }
 
     /** 退出时候保存选择后数据库的设置 */
-    private void saveChannel() {
+    void saveChannel() {
         ChannelManage.getManage(App.getApp().getSQLHelper()).deleteAllChannel();
         ChannelManage.getManage(App.getApp().getSQLHelper()).saveUserChannel(
                 userAdapter.getChannnelLst());
@@ -295,7 +310,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
         super.finish();
         if (userAdapter.isListChanged()) {
             MainActivity_.isChange = true;
-            saveChannel();
+            // saveChannel();
             Log.d(TAG, "数据发生改变");
         }
     }

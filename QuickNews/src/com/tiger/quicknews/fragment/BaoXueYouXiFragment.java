@@ -88,7 +88,8 @@ public class BaoXueYouXiFragment extends BaseFragment implements
         AnimationAdapter animationAdapter = new CardsAnimationAdapter(newAdapter);
         animationAdapter.setAbsListView(mListView);
         mListView.setAdapter(animationAdapter);
-        loadData(getCommonUrl(index + "", Url.BaoXueId));
+        // loadData(getCommonUrl(index + "", Url.BaoXueId));
+        onRefresh();
 
         mListView.setOnBottomListener(new OnClickListener() {
             @Override
@@ -154,16 +155,11 @@ public class BaoXueYouXiFragment extends BaseFragment implements
 
     @Override
     public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                currentPagte = 1;
-                isRefresh = true;
-                loadData(getCommonUrl(0 + "", Url.BaoXueId));
-                url_maps.clear();
-                mDemoSlider.removeAllSliders();
-            }
-        }, 2000);
+        currentPagte = 1;
+        isRefresh = true;
+        loadData(getCommonUrl(0 + "", Url.BaoXueId));
+        url_maps.clear();
+        mDemoSlider.removeAllSliders();
     }
 
     @ItemClick(R.id.listview)
