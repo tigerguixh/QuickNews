@@ -33,7 +33,7 @@ public class TimeUtils {
      * @return
      */
     public static String getCurrentTime() {
-        return getFormatDateTime(new Date(), "yyyy月M日dd");
+        return getFormatDateTime(new Date(), "yyyy年MM月");
     }
 
     public static String getFormatDateTime(Date date, String format) {

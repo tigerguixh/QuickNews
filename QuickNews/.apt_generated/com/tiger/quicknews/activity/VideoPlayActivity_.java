@@ -86,10 +86,10 @@ public final class VideoPlayActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mProgressBar = ((ProgressBar) hasViews.findViewById(id.probar));
         mLoadRate = ((TextView) hasViews.findViewById(id.load_rate));
-        mVideoEnd = ((ImageView) hasViews.findViewById(id.video_end));
         mVideoView = ((VideoView) hasViews.findViewById(id.buffer));
+        mVideoEnd = ((ImageView) hasViews.findViewById(id.video_end));
+        mProgressBar = ((ProgressBar) hasViews.findViewById(id.probar));
         initView();
     }
 

@@ -11,6 +11,7 @@ import android.os.Looper;
 import android.view.View;
 
 import com.tiger.quicknews.activity.BaseActivity;
+import com.tiger.quicknews.utils.BMapUtil;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -72,13 +73,19 @@ public class IntentUtils {
 
                 try {
                     bitmap = Bitmap.createBitmap(contentView.getWidth(),
-                            contentView.getHeight(), Bitmap.Config.ARGB_8888);
+                            contentView.getHeight(), Bitmap.Config.ARGB_4444);
+                    // bitmap = BMapUtil.getBitmapFromViews(contentView);
                     contentView.draw(new Canvas(bitmap));
 
                     baos = new ByteArrayOutputStream();
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 70, baos);
                     intent.putExtra(KEY_PREVIEW_IMAGE, baos.toByteArray());
-                } finally {
+
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+                finally {
                     try {
                         /** no need to close, actually do nothing */
                         if (null != baos)

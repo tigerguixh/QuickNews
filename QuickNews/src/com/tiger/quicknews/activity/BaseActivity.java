@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Xml.Encoding;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,6 +23,11 @@ import com.tiger.quicknews.wedget.crouton.Style;
 import com.tiger.quicknews.wedget.gesture.BaseActivityHelper;
 import com.tiger.quicknews.wedget.slideingactivity.IntentUtils;
 import com.tiger.quicknews.wedget.slideingactivity.SlidingActivity;
+
+import org.apache.http.util.EncodingUtils;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 public class BaseActivity extends SlidingActivity {
 
@@ -64,8 +70,9 @@ public class BaseActivity extends SlidingActivity {
         return urlString;
     }
 
-    public String getWeatherUrl(String cityName) {
-        String urlString = Url.WeatherHost + cityName + Url.WeatherKey;
+    public String getWeatherUrl(String cityName) throws UnsupportedEncodingException {
+        // + Url.WeatherKey
+        String urlString = Url.WeatherHost + URLEncoder.encode(cityName, "utf-8");
         return urlString;
     }
 

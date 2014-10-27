@@ -144,9 +144,11 @@ public class WeatherActivity extends BaseActivity {
 
     @UiThread
     public void getResult(String result) {
+        System.out.println(result + "---");
         setCacheStr("WeatherActivity", result);
-        List<WeatherModle> weatherModles = WeatherListJson.instance(this).readJsonPhotoListModles(
-                result);
+        List<WeatherModle> weatherModles = WeatherListJson.instance(this)
+                .readJsonWeatherListModles(
+                        result);
         if (weatherModles.size() > 0) {
             setWeather(weatherModles.get(0));
             mWeatherAdapter1.clear();
@@ -179,7 +181,11 @@ public class WeatherActivity extends BaseActivity {
             if (!"".equals(titleName)) {
                 mTitle.setText(titleName + "天气");
                 setBack(titleName);
-                loadData(getWeatherUrl(titleName));
+                try {
+                    loadData(getWeatherUrl(titleName));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

@@ -74,9 +74,9 @@ public final class FoodBallFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mProgressBar = ((ProgressBar) hasViews.findViewById(com.tiger.quicknews.R.id.progressBar));
         mListView = ((SwipeListView) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
         swipeLayout = ((SwipeRefreshLayout) hasViews.findViewById(com.tiger.quicknews.R.id.swipe_container));
+        mProgressBar = ((ProgressBar) hasViews.findViewById(com.tiger.quicknews.R.id.progressBar));
         {
             AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
             if (view!= null) {

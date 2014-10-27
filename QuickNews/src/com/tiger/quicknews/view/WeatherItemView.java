@@ -32,7 +32,7 @@ public class WeatherItemView extends LinearLayout {
     }
 
     public void setData(WeatherModle weatherModle) {
-        mWeek.setText(weatherModle.getWeek());
+        mWeek.setText(weatherModle.getDate());
         mTemperature.setText(weatherModle.getTemperature());
         mWeather.setText(weatherModle.getWeather());
         mWind.setText(weatherModle.getWind());

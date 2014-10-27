@@ -107,7 +107,9 @@ public class Url {
     public static final String VideoJingPinId = "00850FRB";
 
     // 天气预报url
-    public static final String WeatherHost = "http://v.juhe.cn/weather/index?cityname=";
+    public static final String WeatherHost = "http://wthrcdn.etouch.cn/weather_mini?city=";
+    // http://v.juhe.cn/weather/index?cityname=
+    //
 
     public static final String WeatherKey = "&key=1734f933d24634331a24aaadc1cb088f";
 
