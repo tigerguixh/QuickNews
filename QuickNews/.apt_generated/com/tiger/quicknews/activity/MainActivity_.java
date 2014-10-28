@@ -86,31 +86,16 @@ public final class MainActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mColumnHorizontalScrollView = ((ColumnHorizontalScrollView) hasViews.findViewById(id.mColumnHorizontalScrollView));
-        shade_right = ((ImageView) hasViews.findViewById(id.shade_right));
-        mRadioGroup_content = ((LinearLayout) hasViews.findViewById(id.mRadioGroup_content));
-        top_more = ((ImageView) hasViews.findViewById(id.top_more));
         shade_left = ((ImageView) hasViews.findViewById(id.shade_left));
-        ll_more_columns = ((LinearLayout) hasViews.findViewById(id.ll_more_columns));
-        button_more_columns = ((ImageView) hasViews.findViewById(id.button_more_columns));
         mViewPager = ((ViewPager) hasViews.findViewById(id.mViewPager));
         top_head = ((ImageView) hasViews.findViewById(id.top_head));
         rl_column = ((RelativeLayout) hasViews.findViewById(id.rl_column));
-        {
-            View view = hasViews.findViewById(id.button_more_columns);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MainActivity_.this.onMoreColumns(view);
-                    }
-
-                }
-                );
-            }
-        }
+        top_more = ((ImageView) hasViews.findViewById(id.top_more));
+        mRadioGroup_content = ((LinearLayout) hasViews.findViewById(id.mRadioGroup_content));
+        ll_more_columns = ((LinearLayout) hasViews.findViewById(id.ll_more_columns));
+        mColumnHorizontalScrollView = ((ColumnHorizontalScrollView) hasViews.findViewById(id.mColumnHorizontalScrollView));
+        button_more_columns = ((ImageView) hasViews.findViewById(id.button_more_columns));
+        shade_right = ((ImageView) hasViews.findViewById(id.shade_right));
         {
             View view = hasViews.findViewById(id.top_head);
             if (view!= null) {
@@ -120,6 +105,21 @@ public final class MainActivity_
                     @Override
                     public void onClick(View view) {
                         MainActivity_.this.onMenu(view);
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.button_more_columns);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MainActivity_.this.onMoreColumns(view);
                     }
 
                 }

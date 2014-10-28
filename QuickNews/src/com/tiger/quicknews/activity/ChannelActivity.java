@@ -226,12 +226,10 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
                     otherAdapter.setVisible(true);
                     otherAdapter.notifyDataSetChanged();
                     userAdapter.remove();
-                    MainActivity.userChannelList.add(moveChannel);
                 } else {
                     userAdapter.setVisible(true);
                     userAdapter.notifyDataSetChanged();
                     otherAdapter.remove();
-                    MainActivity.userChannelList.remove(moveChannel);
                 }
                 isMove = false;
             }
