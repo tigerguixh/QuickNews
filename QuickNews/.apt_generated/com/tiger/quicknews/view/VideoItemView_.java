@@ -67,8 +67,8 @@ public final class VideoItemView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        videoView = ((ImageView) hasViews.findViewById(id.video_img));
         videoTime = ((TextView) hasViews.findViewById(id.video_time));
+        videoView = ((ImageView) hasViews.findViewById(id.video_img));
         videoTitle = ((TextView) hasViews.findViewById(id.video_title));
     }
 

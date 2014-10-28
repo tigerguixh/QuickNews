@@ -67,11 +67,11 @@ public final class WeatherItemView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mWind = ((TextView) hasViews.findViewById(id.wind));
-        mWeek = ((TextView) hasViews.findViewById(id.week));
-        mTemperature = ((TextView) hasViews.findViewById(id.temperature));
-        mWeather = ((TextView) hasViews.findViewById(id.weather));
         mWeatherImage = ((ImageView) hasViews.findViewById(id.weahter_image));
+        mTemperature = ((TextView) hasViews.findViewById(id.temperature));
+        mWind = ((TextView) hasViews.findViewById(id.wind));
+        mWeather = ((TextView) hasViews.findViewById(id.weather));
+        mWeek = ((TextView) hasViews.findViewById(id.week));
     }
 
 }

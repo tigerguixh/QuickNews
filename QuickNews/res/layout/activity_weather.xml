@@ -13,7 +13,7 @@
         layout="@layout/common_title_bar" />
 
     <RelativeLayout
-        android:id="@+id/layout"
+        android:id="@+id/layout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -61,7 +61,7 @@
     <com.tiger.quicknews.wedget.gesture.EnableChildSlideFrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/layout" >
+        android:layout_below="@+id/layout1" >
 
         <android.support.v4.view.ViewPager
             android:id="@+id/vPager"
@@ -84,6 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="10dp"
+            android:visibility="gone"
             android:text="2014年6月30日" />
 
         <TextView

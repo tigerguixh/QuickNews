@@ -15,6 +15,8 @@ import com.tiger.quicknews.adapter.MyViewPagerAdapter;
 import com.tiger.quicknews.adapter.WeatherAdapter;
 import com.tiger.quicknews.bean.WeatherModle;
 import com.tiger.quicknews.http.HttpUtil;
+import com.tiger.quicknews.http.ResponseData;
+import com.tiger.quicknews.http.VolleyUtils;
 import com.tiger.quicknews.http.json.WeatherListJson;
 import com.tiger.quicknews.initview.SlidingMenuView;
 import com.tiger.quicknews.utils.StringUtils;
@@ -35,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @EActivity(R.layout.activity_weather)
-public class WeatherActivity extends BaseActivity {
+public class WeatherActivity extends BaseActivity implements ResponseData {
 
     @ViewById(R.id.title)
     protected TextView mTitle;
@@ -84,6 +86,7 @@ public class WeatherActivity extends BaseActivity {
             mLocal.setVisibility(View.VISIBLE);
             setBack(titleName);
             loadData(getWeatherUrl(titleName));
+
             mWeatherDate.setText(TimeUtils.getCurrentTime());
         } catch (Exception e) {
             e.printStackTrace();
@@ -135,8 +138,9 @@ public class WeatherActivity extends BaseActivity {
     public void loadNewDetailData(String url) {
         String result;
         try {
-            result = HttpUtil.getByHttpClient(this, url);
-            getResult(result);
+            // result = HttpUtil.getByHttpClient(this, url);
+            // getResult(result);
+            VolleyUtils.getVolleyData(url, this, this);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -144,7 +148,6 @@ public class WeatherActivity extends BaseActivity {
 
     @UiThread
     public void getResult(String result) {
-        System.out.println(result + "---");
         setCacheStr("WeatherActivity", result);
         List<WeatherModle> weatherModles = WeatherListJson.instance(this)
                 .readJsonWeatherListModles(
@@ -164,7 +167,7 @@ public class WeatherActivity extends BaseActivity {
         mWeather.setText(weatherModle.getWeather());
         mWind.setText(weatherModle.getWind());
         mWeatherTemp.setText(weatherModle.getTemperature());
-        mWeek.setText(weatherModle.getWeek());
+        mWeek.setText(weatherModle.getDate());
         SlidingMenuView.instance().setWeatherImage(mWeatherImage, weatherModle.getWeather());
     }
 
@@ -200,6 +203,11 @@ public class WeatherActivity extends BaseActivity {
     public void onPause() {
         super.onPause();
         MobclickAgent.onPause(this);
+    }
+
+    @Override
+    public void getResponseData(int id, String result) {
+        getResult(result);
     }
 
 }

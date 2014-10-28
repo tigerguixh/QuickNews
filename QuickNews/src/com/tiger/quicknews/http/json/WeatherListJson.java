@@ -40,7 +40,7 @@ public class WeatherListJson extends JsonPacket {
             JSONObject jsonObject = new JSONObject(res);
             JSONArray jsonArray = jsonObject.getJSONObject("data").getJSONArray("forecast");
             for (int i = 0; i < jsonArray.length(); i++) {
-                weatherModle = readJsonWeatherModle(jsonArray.getJSONObject(i));
+                weatherModle = readJsonWeatherModles(jsonArray.getJSONObject(i));
                 weatherListModles.add(weatherModle);
             }
         } catch (Exception e) {

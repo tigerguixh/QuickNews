@@ -86,31 +86,16 @@ public final class MainActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mViewPager = ((ViewPager) hasViews.findViewById(id.mViewPager));
         top_head = ((ImageView) hasViews.findViewById(id.top_head));
-        shade_left = ((ImageView) hasViews.findViewById(id.shade_left));
         top_more = ((ImageView) hasViews.findViewById(id.top_more));
-        shade_right = ((ImageView) hasViews.findViewById(id.shade_right));
-        mColumnHorizontalScrollView = ((ColumnHorizontalScrollView) hasViews.findViewById(id.mColumnHorizontalScrollView));
-        rl_column = ((RelativeLayout) hasViews.findViewById(id.rl_column));
-        button_more_columns = ((ImageView) hasViews.findViewById(id.button_more_columns));
         mRadioGroup_content = ((LinearLayout) hasViews.findViewById(id.mRadioGroup_content));
+        mViewPager = ((ViewPager) hasViews.findViewById(id.mViewPager));
+        button_more_columns = ((ImageView) hasViews.findViewById(id.button_more_columns));
+        shade_right = ((ImageView) hasViews.findViewById(id.shade_right));
+        rl_column = ((RelativeLayout) hasViews.findViewById(id.rl_column));
+        mColumnHorizontalScrollView = ((ColumnHorizontalScrollView) hasViews.findViewById(id.mColumnHorizontalScrollView));
+        shade_left = ((ImageView) hasViews.findViewById(id.shade_left));
         ll_more_columns = ((LinearLayout) hasViews.findViewById(id.ll_more_columns));
-        {
-            View view = hasViews.findViewById(id.top_head);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MainActivity_.this.onMenu(view);
-                    }
-
-                }
-                );
-            }
-        }
         {
             View view = hasViews.findViewById(id.button_more_columns);
             if (view!= null) {
@@ -120,6 +105,21 @@ public final class MainActivity_
                     @Override
                     public void onClick(View view) {
                         MainActivity_.this.onMoreColumns(view);
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.top_head);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MainActivity_.this.onMenu(view);
                     }
 
                 }

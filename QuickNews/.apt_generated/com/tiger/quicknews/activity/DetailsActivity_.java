@@ -89,13 +89,13 @@ public final class DetailsActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        newTitle = ((TextView) hasViews.findViewById(id.new_title));
         mPlay = ((ImageView) hasViews.findViewById(id.play));
-        mProgressPieView = ((ProgressPieView) hasViews.findViewById(id.progressPieView));
-        newTime = ((TextView) hasViews.findViewById(id.new_time));
-        newImg = ((ImageView) hasViews.findViewById(id.new_img));
+        newTitle = ((TextView) hasViews.findViewById(id.new_title));
         webView = ((HtmlTextView) hasViews.findViewById(id.wb_details));
         imgCount = ((TextView) hasViews.findViewById(id.img_count));
+        newTime = ((TextView) hasViews.findViewById(id.new_time));
+        mProgressPieView = ((ProgressPieView) hasViews.findViewById(id.progressPieView));
+        newImg = ((ImageView) hasViews.findViewById(id.new_img));
         {
             View view = hasViews.findViewById(id.new_img);
             if (view!= null) {

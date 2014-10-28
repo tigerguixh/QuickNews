@@ -32,11 +32,15 @@ public class WeatherItemView extends LinearLayout {
     }
 
     public void setData(WeatherModle weatherModle) {
-        mWeek.setText(weatherModle.getDate());
-        mTemperature.setText(weatherModle.getTemperature());
-        mWeather.setText(weatherModle.getWeather());
-        mWind.setText(weatherModle.getWind());
-        SlidingMenuView.instance().setWeatherImage(mWeatherImage, weatherModle.getWeather());
+        try {
+            mWeek.setText("星" + weatherModle.getDate().split("日星")[1]);
+            mTemperature.setText(weatherModle.getTemperature().replace("低温", "~").split("高温")[1]);
+            mWeather.setText(weatherModle.getWeather());
+            mWind.setText(weatherModle.getWind());
+            SlidingMenuView.instance().setWeatherImage(mWeatherImage, weatherModle.getWeather());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
