@@ -24,6 +24,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class IntentUtils {
     public static String KEY_PREVIEW_IMAGE = "preview_image";
+    static ByteArrayOutputStream baos = null;
+    static Bitmap bitmap = null;
 
     /**
      * start screen capture with no delay
@@ -67,9 +69,6 @@ public class IntentUtils {
                  * android.R.id.content to your root layout id
                  */
                 final View contentView = ((Activity) context).findViewById(android.R.id.content);
-
-                ByteArrayOutputStream baos = null;
-                Bitmap bitmap = null;
 
                 try {
                     bitmap = Bitmap.createBitmap(contentView.getWidth(),

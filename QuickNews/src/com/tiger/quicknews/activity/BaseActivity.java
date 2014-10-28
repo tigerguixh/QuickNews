@@ -18,6 +18,7 @@ import com.tiger.quicknews.http.Url;
 import com.tiger.quicknews.listener.BackGestureListener;
 import com.tiger.quicknews.utils.ACache;
 import com.tiger.quicknews.utils.DialogUtil;
+import com.tiger.quicknews.utils.StringUtils;
 import com.tiger.quicknews.wedget.crouton.Crouton;
 import com.tiger.quicknews.wedget.crouton.Style;
 import com.tiger.quicknews.wedget.gesture.BaseActivityHelper;
@@ -203,7 +204,9 @@ public class BaseActivity extends SlidingActivity {
      * 设置缓存数据（key,value）
      */
     public void setCacheStr(String key, String value) {
-        ACache.get(this).put(key, value);
+        if (!StringUtils.isEmpty(value)) {
+            ACache.get(this).put(key, value);
+        }
     }
 
     /**

@@ -194,7 +194,11 @@ public class NewsFragment extends BaseFragment implements SwipeRefreshLayout.OnR
         String result;
         try {
             result = HttpUtil.getByHttpClient(getActivity(), url);
-            getResult(result);
+            if (!StringUtils.isEmpty(result)) {
+                getResult(result);
+            } else {
+                swipeLayout.setRefreshing(false);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
