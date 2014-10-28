@@ -86,8 +86,8 @@ public final class ChooseCityActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        searchBox = ((EditText) hasViews.findViewById(com.tiger.quicknews.R.id.input_search_query));
         mTitle = ((TextView) hasViews.findViewById(com.tiger.quicknews.R.id.title));
+        searchBox = ((EditText) hasViews.findViewById(com.tiger.quicknews.R.id.input_search_query));
         listview = ((ContactListViewImpl) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
         {
             AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.tiger.quicknews.R.id.listview));

@@ -83,13 +83,13 @@ public final class VideoActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mGaoXiao = ((RadioButton) hasViews.findViewById(id.video_gaoxiao));
-        mJingPin = ((RadioButton) hasViews.findViewById(id.video_jingpin));
+        mTitle = ((TextView) hasViews.findViewById(id.title));
         mYuLe = ((RadioButton) hasViews.findViewById(id.video_yule));
         mMeiTu = ((RadioButton) hasViews.findViewById(id.meitu));
-        mTitle = ((TextView) hasViews.findViewById(id.title));
-        mReDian = ((RadioButton) hasViews.findViewById(id.video_redian));
         mViewPager = ((ViewPager) hasViews.findViewById(id.vPager));
+        mReDian = ((RadioButton) hasViews.findViewById(id.video_redian));
+        mJingPin = ((RadioButton) hasViews.findViewById(id.video_jingpin));
+        mGaoXiao = ((RadioButton) hasViews.findViewById(id.video_gaoxiao));
         initView();
     }
 

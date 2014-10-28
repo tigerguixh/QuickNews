@@ -144,6 +144,21 @@ public class BaseActivity extends SlidingActivity {
     }
 
     /**
+     * dialog是否显示
+     */
+    public boolean isShow() {
+        try {
+
+            if (progressDialog != null && progressDialog.isShowing()) {
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
      * 更具类打开acitvity
      */
     public void openActivity(Class<?> pClass) {

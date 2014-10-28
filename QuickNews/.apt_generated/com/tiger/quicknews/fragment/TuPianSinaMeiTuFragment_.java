@@ -74,9 +74,9 @@ public final class TuPianSinaMeiTuFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        mListView = ((SwipeListView) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
         swipeLayout = ((SwipeRefreshLayout) hasViews.findViewById(com.tiger.quicknews.R.id.swipe_container));
         mProgressBar = ((ProgressBar) hasViews.findViewById(com.tiger.quicknews.R.id.progressBar));
-        mListView = ((SwipeListView) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
         {
             AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
             if (view!= null) {

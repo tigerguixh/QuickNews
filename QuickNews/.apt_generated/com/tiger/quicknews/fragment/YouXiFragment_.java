@@ -74,8 +74,8 @@ public final class YouXiFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        swipeLayout = ((SwipeRefreshLayout) hasViews.findViewById(com.tiger.quicknews.R.id.swipe_container));
         mProgressBar = ((ProgressBar) hasViews.findViewById(com.tiger.quicknews.R.id.progressBar));
+        swipeLayout = ((SwipeRefreshLayout) hasViews.findViewById(com.tiger.quicknews.R.id.swipe_container));
         mListView = ((SwipeListView) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
         {
             AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.tiger.quicknews.R.id.listview));

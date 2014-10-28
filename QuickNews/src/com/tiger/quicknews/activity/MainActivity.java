@@ -73,7 +73,7 @@ public class MainActivity extends BaseActivity {
     @ViewById(R.id.top_more)
     protected ImageView top_more;
     /** 用户选择的新闻分类列表 */
-    private ArrayList<ChannelItem> userChannelList;
+    protected static ArrayList<ChannelItem> userChannelList;
     /** 请求CODE */
     public final static int CHANNELREQUEST = 1;
     /** 调整返回的RESULTCODE */
@@ -127,6 +127,8 @@ public class MainActivity extends BaseActivity {
         mViewPager.setOffscreenPageLimit(1);
         mViewPager.setAdapter(mAdapetr);
         mViewPager.setOnPageChangeListener(pageListener);
+        userChannelList = ((ArrayList<ChannelItem>) ChannelManage.getManage(
+                App.getApp().getSQLHelper()).getUserChannel());
     }
 
     protected void initSlidingMenu() {
@@ -167,8 +169,6 @@ public class MainActivity extends BaseActivity {
 
     /** 获取Column栏目 数据 */
     private void initColumnData() {
-        userChannelList = ((ArrayList<ChannelItem>) ChannelManage.getManage(
-                App.getApp().getSQLHelper()).getUserChannel());
         initTabColumn();
         initFragment();
     }
@@ -326,7 +326,6 @@ public class MainActivity extends BaseActivity {
         public void onPageSelected(int position) {
             mViewPager.setCurrentItem(position);
             selectTab(position);
-            System.out.println(position + "----");
         }
     };
 
@@ -382,16 +381,21 @@ public class MainActivity extends BaseActivity {
         if (side_drawer.isMenuShowing()) {
             side_drawer.showContent();
         } else {
-            if (back_pressed + 3000 > System.currentTimeMillis()) {
-                finish();
-                super.onBackPressed();
-            }
-            else
-                showCustomToast(getString(R.string.press_again_exit));
-            // Toast.makeText(this, getString(R.string.press_again_exit),
-            // 1).show();
+            System.out.println(isShow());
+            if (isShow()) {
+                dismissProgressDialog();
+            } else {
+                if (back_pressed + 3000 > System.currentTimeMillis()) {
+                    finish();
+                    super.onBackPressed();
+                }
+                else
+                    showCustomToast(getString(R.string.press_again_exit));
+                // Toast.makeText(this, getString(R.string.press_again_exit),
+                // 1).show();
 
-            back_pressed = System.currentTimeMillis();
+                back_pressed = System.currentTimeMillis();
+            }
         }
     }
 

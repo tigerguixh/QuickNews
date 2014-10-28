@@ -63,6 +63,12 @@ public class NewsFragmentPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        // 这里Destroy的是Fragment的视图层次，并不是Destroy Fragment对象
+        super.destroyItem(container, position, object);
+    }
+
+    @Override
     public Object instantiateItem(ViewGroup container, int position) {
         if (fragments.size() <= position) {
             position = position % fragments.size();
