@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.os.Handler;
 import android.os.Looper;
@@ -13,8 +14,11 @@ import android.view.View;
 import com.tiger.quicknews.activity.BaseActivity;
 import com.tiger.quicknews.utils.BMapUtil;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.lang.ref.SoftReference;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -90,7 +94,7 @@ public class IntentUtils {
                         if (null != baos)
                             baos.close();
                         if (null != bitmap && !bitmap.isRecycled()) {
-                            bitmap.recycle();
+                            // bitmap.recycle();
                             bitmap = null;
                         }
                     } catch (IOException e) {
@@ -105,7 +109,11 @@ public class IntentUtils {
             ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor();
             worker.schedule(action, delay, TimeUnit.MILLISECONDS);
         } else {
-            action.run();
+            try {
+                action.run();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }

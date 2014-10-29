@@ -28,6 +28,7 @@ public class SlidingActivity extends FragmentActivity {
     private float mInitOffset;
     private boolean hideTitle = false;
     private int titleResId = -1;
+    Bitmap bmp;
 
     @SuppressLint("NewApi")
     @Override
@@ -104,19 +105,28 @@ public class SlidingActivity extends FragmentActivity {
 
         byte[] byteArray = getIntent().getByteArrayExtra(IntentUtils.KEY_PREVIEW_IMAGE);
         if (null != byteArray && byteArray.length > 0) {
-            Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-            if (null != bmp) {
-                ((ImageView) mPreview).setImageBitmap(bmp);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                    mPreview.setScaleX(MIN_SCALE);
-                    mPreview.setScaleY(MIN_SCALE);
+            try {
+                bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+                if (null != bmp) {
+                    ((ImageView) mPreview).setImageBitmap(bmp);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                        mPreview.setScaleX(MIN_SCALE);
+                        mPreview.setScaleY(MIN_SCALE);
+                    } else {
+                        ViewHelper.setScaleX(mPreview, MIN_SCALE);
+                        ViewHelper.setScaleY(mPreview, MIN_SCALE);
+                    }
                 } else {
-                    ViewHelper.setScaleX(mPreview, MIN_SCALE);
-                    ViewHelper.setScaleY(mPreview, MIN_SCALE);
+                    /** preview image captured fail, disable the slide back */
+                    slideLayout.setSlideable(false);
                 }
-            } else {
-                /** preview image captured fail, disable the slide back */
-                slideLayout.setSlideable(false);
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (null != bmp && !bmp.isRecycled()) {
+                    // bmp.recycle();
+                    bmp = null;
+                }
             }
         } else {
             /** preview image captured fail, disable the slide back */

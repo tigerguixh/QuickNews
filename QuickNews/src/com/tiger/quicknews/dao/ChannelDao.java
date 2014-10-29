@@ -5,13 +5,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
 import com.tiger.quicknews.bean.ChannelItem;
 import com.tiger.quicknews.db.SQLHelper;
-
-import org.jsoup.select.Evaluator.Class;
-
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
