@@ -89,10 +89,10 @@ public final class MessageActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mListView = ((SwipeListView) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
-        mProgressBar = ((ProgressBar) hasViews.findViewById(com.tiger.quicknews.R.id.progressBar));
         swipeLayout = ((SwipeRefreshLayout) hasViews.findViewById(com.tiger.quicknews.R.id.swipe_container));
         mTitle = ((TextView) hasViews.findViewById(com.tiger.quicknews.R.id.title));
+        mProgressBar = ((ProgressBar) hasViews.findViewById(com.tiger.quicknews.R.id.progressBar));
+        mListView = ((SwipeListView) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
         if (mListView!= null) {
             mListView.setOnItemClickListener(new OnItemClickListener() {
 

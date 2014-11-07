@@ -81,24 +81,9 @@ public final class MoreActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mProgressBar = ((ProgressBar) hasViews.findViewById(id.update_progress));
-        mTitle = ((TextView) hasViews.findViewById(id.title));
         mTextViewNewest = ((TextView) hasViews.findViewById(id.newest));
-        {
-            View view = hasViews.findViewById(id.checkUpdate);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MoreActivity_.this.checkUpdateClicked();
-                    }
-
-                }
-                );
-            }
-        }
+        mTitle = ((TextView) hasViews.findViewById(id.title));
+        mProgressBar = ((ProgressBar) hasViews.findViewById(id.update_progress));
         {
             View view = hasViews.findViewById(id.restart);
             if (view!= null) {
@@ -108,6 +93,21 @@ public final class MoreActivity_
                     @Override
                     public void onClick(View view) {
                         MoreActivity_.this.restart(view);
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.checkUpdate);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MoreActivity_.this.checkUpdateClicked();
                     }
 
                 }

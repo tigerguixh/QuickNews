@@ -77,8 +77,8 @@ public final class NBAFragment_
     @Override
     public void onViewChanged(HasViews hasViews) {
         mListView = ((SwipeListView) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
-        swipeLayout = ((SwipeRefreshLayout) hasViews.findViewById(com.tiger.quicknews.R.id.swipe_container));
         mProgressBar = ((ProgressBar) hasViews.findViewById(com.tiger.quicknews.R.id.progressBar));
+        swipeLayout = ((SwipeRefreshLayout) hasViews.findViewById(com.tiger.quicknews.R.id.swipe_container));
         if (mListView!= null) {
             mListView.setOnItemClickListener(new OnItemClickListener() {
 

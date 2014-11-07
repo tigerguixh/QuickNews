@@ -93,15 +93,15 @@ public final class WeatherActivity_
     @Override
     public void onViewChanged(HasViews hasViews) {
         mWeatherTemp = ((TextView) hasViews.findViewById(id.weatherTemp));
-        mViewPager = ((ViewPager) hasViews.findViewById(id.vPager));
-        mTitle = ((TextView) hasViews.findViewById(id.title));
-        mWeather = ((TextView) hasViews.findViewById(id.weather));
-        mWind = ((TextView) hasViews.findViewById(id.wind));
-        mLayout = ((RelativeLayout) hasViews.findViewById(id.layout));
         mWeatherDate = ((TextView) hasViews.findViewById(id.weather_date));
+        mWind = ((TextView) hasViews.findViewById(id.wind));
+        mTitle = ((TextView) hasViews.findViewById(id.title));
+        mLayout = ((RelativeLayout) hasViews.findViewById(id.layout));
         mWeek = ((TextView) hasViews.findViewById(id.week));
         mLocal = ((TextView) hasViews.findViewById(id.local));
+        mWeather = ((TextView) hasViews.findViewById(id.weather));
         mWeatherImage = ((ImageView) hasViews.findViewById(id.weatherImage));
+        mViewPager = ((ViewPager) hasViews.findViewById(id.vPager));
         if (mLocal!= null) {
             mLocal.setOnClickListener(new OnClickListener() {
 

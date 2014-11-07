@@ -69,15 +69,15 @@ public final class NewItemView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        itemAbstract = ((TextView) hasViews.findViewById(id.item_abstract));
-        imageLayout = ((LinearLayout) hasViews.findViewById(id.layout_image));
         leftImage = ((ImageView) hasViews.findViewById(id.left_image));
-        articleLayout = ((RelativeLayout) hasViews.findViewById(id.article_top_layout));
+        itemAbstract = ((TextView) hasViews.findViewById(id.item_abstract));
         item_image0 = ((ImageView) hasViews.findViewById(id.item_image_0));
-        itemTitle = ((TextView) hasViews.findViewById(id.item_title));
+        imageLayout = ((LinearLayout) hasViews.findViewById(id.layout_image));
+        item_image1 = ((ImageView) hasViews.findViewById(id.item_image_1));
         itemConten = ((TextView) hasViews.findViewById(id.item_content));
         item_image2 = ((ImageView) hasViews.findViewById(id.item_image_2));
-        item_image1 = ((ImageView) hasViews.findViewById(id.item_image_1));
+        itemTitle = ((TextView) hasViews.findViewById(id.item_title));
+        articleLayout = ((RelativeLayout) hasViews.findViewById(id.article_top_layout));
     }
 
 }

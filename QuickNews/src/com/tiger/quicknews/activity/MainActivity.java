@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,6 +36,7 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Trace;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
@@ -166,7 +168,8 @@ public class MainActivity extends BaseActivity {
     }
 
     /** 获取Column栏目 数据 */
-    private void initColumnData() {
+    @Trace(tag = "CustomTag", level = Log.WARN)
+    void initColumnData() {
         userChannelLists = ((ArrayList<ChannelItem>) ChannelManage.getManage(
                 App.getApp().getSQLHelper()).getUserChannel());
         initTabColumn();
@@ -381,7 +384,6 @@ public class MainActivity extends BaseActivity {
         if (side_drawer.isMenuShowing()) {
             side_drawer.showContent();
         } else {
-            System.out.println(isShow());
             if (isShow()) {
                 dismissProgressDialog();
             } else {

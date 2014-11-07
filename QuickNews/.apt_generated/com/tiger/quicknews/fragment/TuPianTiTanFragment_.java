@@ -76,8 +76,8 @@ public final class TuPianTiTanFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mProgressBar = ((ProgressBar) hasViews.findViewById(com.tiger.quicknews.R.id.progressBar));
         mListView = ((SwipeListView) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
+        mProgressBar = ((ProgressBar) hasViews.findViewById(com.tiger.quicknews.R.id.progressBar));
         swipeLayout = ((SwipeRefreshLayout) hasViews.findViewById(com.tiger.quicknews.R.id.swipe_container));
         if (mListView!= null) {
             mListView.setOnItemClickListener(new OnItemClickListener() {

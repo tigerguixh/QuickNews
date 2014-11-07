@@ -77,7 +77,7 @@ public class MoreActivity extends BaseActivity {
     @Click(R.id.restart)
     public void restart(View view) {
         setCacheStr("MoreActivity", "MoreActivity");
-        WelcomeActivity_.intent(this).start();
+        WeatherActivity_.intent(this).start();
     }
 
     @Override

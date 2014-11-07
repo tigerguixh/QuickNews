@@ -1,6 +1,7 @@
 
 package com.tiger.quicknews.activity;
 
+import android.R.integer;
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -33,8 +34,13 @@ import org.androidannotations.annotations.OnActivityResult;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
+import u.aly.p;
+
+import java.lang.ref.SoftReference;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @EActivity(R.layout.activity_weather)
 public class WeatherActivity extends BaseActivity implements ResponseData {
@@ -66,12 +72,31 @@ public class WeatherActivity extends BaseActivity implements ResponseData {
 
     private GridView view1, view2;
 
+    private Map<Integer, SoftReference<Integer>> map;
+
     @Bean
     protected WeatherAdapter mWeatherAdapter1, mWeatherAdapter2;
+    int[] pics = {
+            R.drawable.biz_plugin_weather_beijin_bg,
+            R.drawable.biz_plugin_weather_shanghai_bg,
+            R.drawable.biz_plugin_weather_guangzhou_bg,
+            R.drawable.biz_plugin_weather_shenzhen_bg,
+            R.drawable.biz_news_local_weather_bg_big
+    };
 
     @AfterInject
     public void init() {
         views = new ArrayList<View>();
+        initMap();
+    }
+
+    public void initMap() {
+        map = new HashMap<Integer, SoftReference<Integer>>();
+        map.put(0, new SoftReference<Integer>(pics[0]));
+        map.put(1, new SoftReference<Integer>(pics[1]));
+        map.put(2, new SoftReference<Integer>(pics[2]));
+        map.put(3, new SoftReference<Integer>(pics[3]));
+        map.put(4, new SoftReference<Integer>(pics[4]));
     }
 
     @AfterViews
@@ -110,15 +135,15 @@ public class WeatherActivity extends BaseActivity implements ResponseData {
 
     public void setBack(String cityName) {
         if (cityName.equals("北京")) {
-            mLayout.setBackgroundResource(R.drawable.biz_plugin_weather_beijin_bg);
+            mLayout.setBackgroundResource(map.get(0).get());
         } else if (cityName.equals("上海")) {
-            mLayout.setBackgroundResource(R.drawable.biz_plugin_weather_shanghai_bg);
+            mLayout.setBackgroundResource(map.get(1).get());
         } else if (cityName.equals("广州")) {
-            mLayout.setBackgroundResource(R.drawable.biz_plugin_weather_guangzhou_bg);
+            mLayout.setBackgroundResource(map.get(2).get());
         } else if (cityName.equals("深圳")) {
-            mLayout.setBackgroundResource(R.drawable.biz_plugin_weather_shenzhen_bg);
+            mLayout.setBackgroundResource(map.get(3).get());
         } else {
-            mLayout.setBackgroundResource(R.drawable.biz_news_local_weather_bg_big);
+            mLayout.setBackgroundResource(map.get(4).get());
         }
     }
 
@@ -181,10 +206,11 @@ public class WeatherActivity extends BaseActivity implements ResponseData {
         if (data != null) {
             String titleName = data.getStringExtra("cityname");
             setCacheStr("titleName", titleName);
+            initMap();
             if (!"".equals(titleName)) {
-                mTitle.setText(titleName + "天气");
-                setBack(titleName);
                 try {
+                    mTitle.setText(titleName + "天气");
+                    setBack(titleName);
                     loadData(getWeatherUrl(titleName));
                 } catch (Exception e) {
                     e.printStackTrace();
