@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:id="@+id/selected" android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="500" android:drawable="@drawable/loading_pin_0" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_24" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_48" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_72" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_96" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_120" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_144" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_168" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_192" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_216" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_240" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_264" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_288" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_312" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_336" />
+    <item android:duration="30" android:drawable="@drawable/loading_pin_0" />
+</animation-list>
