@@ -88,13 +88,13 @@ public final class DetailsActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        newTime = ((TextView) hasViews.findViewById(id.new_time));
-        webView = ((HtmlTextView) hasViews.findViewById(id.wb_details));
-        mProgressPieView = ((ProgressPieView) hasViews.findViewById(id.progressPieView));
-        newTitle = ((TextView) hasViews.findViewById(id.new_title));
-        imgCount = ((TextView) hasViews.findViewById(id.img_count));
-        newImg = ((ImageView) hasViews.findViewById(id.new_img));
         mPlay = ((ImageView) hasViews.findViewById(id.play));
+        newImg = ((ImageView) hasViews.findViewById(id.new_img));
+        webView = ((HtmlTextView) hasViews.findViewById(id.wb_details));
+        newTitle = ((TextView) hasViews.findViewById(id.new_title));
+        mProgressPieView = ((ProgressPieView) hasViews.findViewById(id.progressPieView));
+        newTime = ((TextView) hasViews.findViewById(id.new_time));
+        imgCount = ((TextView) hasViews.findViewById(id.img_count));
         if (newImg!= null) {
             newImg.setOnClickListener(new OnClickListener() {
 

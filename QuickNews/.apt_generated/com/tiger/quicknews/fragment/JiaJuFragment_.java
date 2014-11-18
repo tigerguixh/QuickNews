@@ -76,8 +76,8 @@ public final class JiaJuFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mListView = ((SwipeListView) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
         swipeLayout = ((SwipeRefreshLayout) hasViews.findViewById(com.tiger.quicknews.R.id.swipe_container));
+        mListView = ((SwipeListView) hasViews.findViewById(com.tiger.quicknews.R.id.listview));
         mProgressBar = ((ProgressBar) hasViews.findViewById(com.tiger.quicknews.R.id.progressBar));
         if (mListView!= null) {
             mListView.setOnItemClickListener(new OnItemClickListener() {

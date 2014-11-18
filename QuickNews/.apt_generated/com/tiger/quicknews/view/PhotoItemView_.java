@@ -67,8 +67,8 @@ public final class PhotoItemView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        photoImg = ((ImageView) hasViews.findViewById(id.photo_img));
         photoTitle = ((TextView) hasViews.findViewById(id.photo_title));
+        photoImg = ((ImageView) hasViews.findViewById(id.photo_img));
     }
 
 }

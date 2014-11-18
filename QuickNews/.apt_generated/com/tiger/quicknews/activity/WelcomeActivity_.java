@@ -81,8 +81,8 @@ public final class WelcomeActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mDiscrollView = ((DiscrollView) hasViews.findViewById(id.layout));
         mButton = ((Button) hasViews.findViewById(id.lastView3));
+        mDiscrollView = ((DiscrollView) hasViews.findViewById(id.layout));
         if (mButton!= null) {
             mButton.setOnClickListener(new OnClickListener() {
 

@@ -42,4 +42,5 @@
         android:layout_centerVertical="true"
         android:visibility="visible"
         android:indeterminateDuration="700" />
+
 </RelativeLayout>
