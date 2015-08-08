@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/QuickNews/libs/androidannotations-api-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QuickNews/libs/universal-image-loader-1.9.2-SNAPSHOT-with-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QuickNews/libs/com.haarman.listviewanimations-2.6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QuickNews/libs/umeng-fb-v4.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QuickNews/libs/android-support-v4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QuickNews/libs/umeng-update-v2.4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QuickNews/libs/nineoldandroids-2.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QuickNews/libs/picasso-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QuickNews/libs/umeng-analytics-v5.2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QuickNews/libs/viewpagertransformslibrary.jar!/" />
+      <root url="jar://$PROJECT_DIR$/QuickNews/libs/volley.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
